@@ -22,7 +22,12 @@ En sortie: [
  */
 
 function getStringsLength(strings) {
+  const CHAINE =strings.map(function(string){
+             return string +" contains "+string.length+" characters"
+  })
+  return CHAINE 
 }
+console.log(getStringsLength(['Cat', 'Lion', 'Tiger', 'Jaguar', 'Leopard']));
 
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,
 // mais alors, il faut alors lancer l'exercice avec node map/ex1
