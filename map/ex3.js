@@ -59,25 +59,36 @@ En sortie:
 
  */
 
-function getMoviesFreshness(movies) {
-  
-  const rottenTomatoes = movies.map(function(movie){
-    return {
-      movie: movie,
-      label: movie.label,
+  function getMoviesFreshness(movies){
+
+    return movies.map(function(movie){
+    if (movie.rating < 60){
+      return {
+      name : movie.name,
+      rating : movie.rating,
+      label : "rotten"
+     }
     }
-    if(rating<60){
-      return label = "rotten"
-    }
-    if(60<=rating<=75){
-      return label = "fresh"
-    }
-    if(rating>75){
-      return label = "certified fresh"
-    }
-    
-})
+    if(movie.rating>75){
+      return {
+        name : movie.name,
+        rating : movie.rating,
+        label : "certified fresh"
+      }
+     }
+    if(60<=movie.rating<=75){
+       return {
+        name : movie.name,
+        rating : movie.rating,
+        label : "fresh"
+       }
+     }
+   })
+
 }
+
+
+
 
 
 
