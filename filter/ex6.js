@@ -28,13 +28,8 @@ Sortie attendue:
 
 function filterOffensiveComments(comments, bannedWords) {
   return comments.filter(function(comment){
-    let a = comments.splice(comments.indexOf(comment,1))
-    if(comment.includes(bannedWords[0])){
-      return !a
-    }
-    if(comment.includes(bannedWords[1])){
-      return !a
-    }
+      return !(comment.toLowerCase().includes(bannedWords[0]) || comment.toLowerCase().includes(bannedWords[1])) 
+  
   })
 }
 
